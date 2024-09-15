@@ -78,21 +78,21 @@ export default {
     },
     methods: {
         getExpenseCategory() {
-            axios.get('http://127.0.0.1:8000/api/minhaj/expensecategory')
+            axios.get('http://127.0.0.1:8000/api/part2/expensecategory')
                 .then((result) => {
                     this.expncatList = result.data.data
                     console.log(result.data.data)
                 })
         },
         getExpense() {
-            axios.get('http://127.0.0.1:8000/api/minhaj/expense')
+            axios.get('http://127.0.0.1:8000/api/part2/expense')
                 .then((result) => {
                     this.expenseList = result.data.data
                     console.log(result.data.data)
                 })
         },
         save() {
-            axios.post("http://127.0.0.1:8000/api/minhaj/expense/", { expense_category_id: this.expense_category_id, amount: this.amount, date: this.date})
+            axios.post("http://127.0.0.1:8000/api/part2/expense/", { expense_category_id: this.expense_category_id, amount: this.amount, date: this.date})
                 .then((response) => {
                     console.log(response.data.data)
                     this.expense_category_id = '';
@@ -104,7 +104,7 @@ export default {
         },
         editExpense(id) {
             this.id = id
-            axios.get("http://127.0.0.1:8000/api/minhaj/expense/" + id + '/edit').then((response) => {
+            axios.get("http://127.0.0.1:8000/api/part2/expense/" + id + '/edit').then((response) => {
                 const d = response.data.data
                 this.expense_category_id = d.expense_category_id
                 this.amount = d.amount
@@ -113,7 +113,7 @@ export default {
             });
         },
         updateExpense() {
-            axios.put("http://127.0.0.1:8000/api/minhaj/expense/" + this.id, { expense_category_id: this.expense_category_id, amount: this.amount, date: this.date }).then((response) => {
+            axios.put("http://127.0.0.1:8000/api/part2/expense/" + this.id, { expense_category_id: this.expense_category_id, amount: this.amount, date: this.date }).then((response) => {
                 console.log(response.status, response.data);
                 this.getExpense()
             });
@@ -121,7 +121,7 @@ export default {
             this.expense_category_id = this.amount = this.date = ''
         },
         deleteExpense(id) {
-            axios.delete("http://127.0.0.1:8000/api/minhaj/expense/" + id).then(() => {
+            axios.delete("http://127.0.0.1:8000/api/part2/expense/" + id).then(() => {
                 this.getExpense()
             });
         },

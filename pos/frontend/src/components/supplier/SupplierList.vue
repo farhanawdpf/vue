@@ -53,7 +53,7 @@ export default {
     },
     methods: {
         getSupplier() {
-            axios.get('http://127.0.0.1:8000/api/minhaj/supplier')
+            axios.get('http://127.0.0.1:8000/api/part2/supplier')
                 .then((res) => {
                     this.supplierList = res.data.data
                     // console.log(res.data.data)
@@ -63,7 +63,7 @@ export default {
             this.$router.push({name:'editsupplier',params: { id: id }})
         },
         deleteSupplier(id){
-            axios.delete("http://127.0.0.1:8000/api/minhaj/supplier/" + id)
+            axios.delete("http://127.0.0.1:8000/api/part2/supplier/" + id)
             .then(() => {
                 console.log("Category deleted successfully.");
                 this.getSupplier()

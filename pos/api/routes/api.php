@@ -33,12 +33,12 @@ Route::prefix('part1')->group(function () {
     Route::resource('product', ProductController::class)->names('product');
     Route::resource('purchase', PurchaseController::class)->names('purchase');
 });
-Route::prefix('minhaj')->group(function () {
+Route::prefix('part2')->group(function () {
     Route::resource('supplier',SupplierController::class)->names('supplier');
     Route::resource('expensecategory', ExpenseCategoryController::class)->names('expcat');
     Route::resource('expense', ExpenseController::class)->names('expense');
 });
-Route::prefix('rubon')->group(function () {
+Route::prefix('part3')->group(function () {
     Route::resource('unit', UnitController::class)->names('unit');
     Route::resource('payment', PaymentController::class)->names('payment');
 });

@@ -65,14 +65,14 @@ export default {
     },
     methods: {
         getUnit() {
-            axios.get('http://127.0.0.1:8000/api/rubon/unit')
+            axios.get('http://127.0.0.1:8000/api/part3/unit')
                 .then((res) => {
                     this.list = res.data.data
                     console.log(res.data.data)
                 })
         },
         save() {
-            axios.post("http://127.0.0.1:8000/api/rubon/unit", {name: this.name })
+            axios.post("http://127.0.0.1:8000/api/part3/unit", {name: this.name })
                 .then((response) => {
                     this.name
                     this.getUnit()
@@ -83,7 +83,7 @@ export default {
         },
         showUni(id) {
             this.id = id
-            axios.get("http://127.0.0.1:8000/api/rubon/unit/" + id + '/edit')
+            axios.get("http://127.0.0.1:8000/api/part3/unit/" + id + '/edit')
                 .then((response) => {
                     const d = response.data.data
                     this.name = d.name
@@ -91,7 +91,7 @@ export default {
                 });
         },
         updateUnit() {
-            axios.put("http://127.0.0.1:8000/api/rubon/unit/" + this.id, { name: this.name })
+            axios.put("http://127.0.0.1:8000/api/part3/unit/" + this.id, { name: this.name })
                 .then((response) => {
                     console.log(response.status, response.data);
                     this.id = 0;
@@ -103,7 +103,7 @@ export default {
                 });
         },
         deleteUnit(id) {
-            axios.delete("http://127.0.0.1:8000/api/rubon/unit/" + id)
+            axios.delete("http://127.0.0.1:8000/api/part3/unit/" + id)
             .then(() => {
                 console.log("Unit deleted successfully.");
                 this.getUnit()

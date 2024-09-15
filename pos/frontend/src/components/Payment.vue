@@ -65,14 +65,14 @@ export default {
     },
     methods: {
         getPayment() {
-            axios.get('http://127.0.0.1:8000/api/rubon/payment')
+            axios.get('http://127.0.0.1:8000/api/part3/payment')
                 .then((res) => {
                     this.list = res.data.data
                     console.log(res.data.data)
                 })
         },
         save() {
-            axios.post("http://127.0.0.1:8000/api/rubon/payment", {method: this.method })
+            axios.post("http://127.0.0.1:8000/api/part3/payment", {method: this.method })
                 .then((response) => {
                     this.method
                     this.getPayment()
@@ -83,7 +83,7 @@ export default {
         },
         showPayment(id) {
             this.id = id
-            axios.get("http://127.0.0.1:8000/api/rubon/payment/" + id + '/edit')
+            axios.get("http://127.0.0.1:8000/api/part3/payment/" + id + '/edit')
                 .then((response) => {
                     const d = response.data.data
                     this.method = d.method
@@ -91,7 +91,7 @@ export default {
                 });
         },
         updatePayment() {
-            axios.put("http://127.0.0.1:8000/api/rubon/payment/" + this.id, { method: this.method })
+            axios.put("http://127.0.0.1:8000/api/part3/payment/" + this.id, { method: this.method })
                 .then((response) => {
                     console.log(response.status, response.data);
                     this.getPayment();
@@ -103,7 +103,7 @@ export default {
                 });
         },
         deletePayment(id) {
-            axios.delete("http://127.0.0.1:8000/api/rubon/payment/" + id)
+            axios.delete("http://127.0.0.1:8000/api/part3/payment/" + id)
             .then(() => {
                 console.log("Payment deleted successfully.");
                 this.getPayment()

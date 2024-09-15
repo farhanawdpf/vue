@@ -64,7 +64,7 @@ export default {
     },
     methods: {
         allExpensecat() {
-            axios.get('http://127.0.0.1:8000/api/minhaj/expensecategory')
+            axios.get('http://127.0.0.1:8000/api/part2/expensecategory')
                 .then((result) => {
                     this.list = result.data.data
                     //console.log(result.data.data)
@@ -72,7 +72,7 @@ export default {
         },
 
         save() {
-            axios.post("http://127.0.0.1:8000/api/minhaj/expensecategory", { name: this.expensecat }).then((response) => {
+            axios.post("http://127.0.0.1:8000/api/part2/expensecategory", { name: this.expensecat }).then((response) => {
                 this.expensecat = ''
                 this.allExpensecat()
             });
@@ -80,7 +80,7 @@ export default {
 
         editExpensecat(id) {
             this.id = id
-            axios.get("http://127.0.0.1:8000/api/minhaj/expensecategory/" + id + '/edit').then((response) => {
+            axios.get("http://127.0.0.1:8000/api/part2/expensecategory/" + id + '/edit').then((response) => {
                 const d = response.data.data
                 this.expensecat = d.name
                 this.allExpensecat()
@@ -89,7 +89,7 @@ export default {
         },
 
         updateExpensecat() {
-            axios.put("http://127.0.0.1:8000/api/minhaj/expensecategory/" + this.id, { name: this.expensecat}).then((response) => {
+            axios.put("http://127.0.0.1:8000/api/part2/expensecategory/" + this.id, { name: this.expensecat}).then((response) => {
                 console.log(response.status, response.data);
                 this.allExpensecat()
             });
@@ -98,7 +98,7 @@ export default {
         },
 
         deleteExpensecat(id) {
-            axios.delete("http://127.0.0.1:8000/api/minhaj/expensecategory/" + id).then(() => {
+            axios.delete("http://127.0.0.1:8000/api/part2/expensecategory/" + id).then(() => {
                 this.allExpensecat()
             });
         },
