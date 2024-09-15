@@ -53,7 +53,7 @@ export default {
     },
     methods: {
         getCustomer() {
-            axios.get('http://127.0.0.1:8000/api/zahid/customer')
+            axios.get('http://127.0.0.1:8000/api/part1/customer')
                 .then((res) => {
                     this.customerList = res.data.data
                     // console.log(res.data.data)
@@ -63,7 +63,7 @@ export default {
             this.$router.push({name:'editcustomer',params: { id: id }})
         },
         deleteCustomer(id){
-            axios.delete("http://127.0.0.1:8000/api/zahid/customer/" + id)
+            axios.delete("http://127.0.0.1:8000/api/part1/customer/" + id)
             .then(() => {
                 console.log("Category deleted successfully.");
                 this.getCustomer()

@@ -51,7 +51,7 @@ export default {
             phone: '',
             address: '',
             id: this.$route.params.id,
-            url: "http://127.0.0.1:8000/api/zahid/employee",
+            url: "http://127.0.0.1:8000/api/part1/employee",
         }
     },
     methods: {

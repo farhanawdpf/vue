@@ -24,7 +24,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::prefix('zahid')->group(function () {
+Route::prefix('part1')->group(function () {
     Route::resource('customer', CustomerController::class)->names('customer');
     Route::resource('employee', EmployeeController::class)->names('employee');
     Route::resource('brand', BrandController::class)->names('brand');

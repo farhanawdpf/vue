@@ -52,7 +52,7 @@ export default {
             phone:this.phone,
             address:this.address,
         };
-            axios.post("http://127.0.0.1:8000/api/zahid/customer", allData)
+            axios.post("http://127.0.0.1:8000/api/part1/customer", allData)
                 .then((response) => {
                         console.log(response);
                     this.$router.push({ name: 'customer' })

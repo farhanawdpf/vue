@@ -57,7 +57,7 @@ export default {
             phone:this.phone,
             address:this.address,
         };
-            axios.post("http://127.0.0.1:8000/api/zahid/employee", allData)
+            axios.post("http://127.0.0.1:8000/api/part1/employee", allData)
                 .then((response) => {
                         console.log(response);
                     this.$router.push({ name: 'employee' })

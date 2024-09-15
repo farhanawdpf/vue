@@ -61,7 +61,7 @@ export default {
     },
     methods: {
         getPurchase() {
-            axios.get('http://127.0.0.1:8000/api/zahid/purchase')
+            axios.get('http://127.0.0.1:8000/api/part1/purchase')
                 .then((res) => {
                     this.purchaseList = res.data.data
                     // console.log(res.data.data)
@@ -71,7 +71,7 @@ export default {
             this.$router.push({name:'editemployee',params: { id: id }})
         },
         deleteEmployee(id){
-            axios.delete("http://127.0.0.1:8000/api/zahid/purchase/" + id)
+            axios.delete("http://127.0.0.1:8000/api/part1/purchase/" + id)
             .then(() => {
                 console.log("Purchase deleted successfully.");
                 this.getPurchase()

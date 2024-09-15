@@ -79,14 +79,14 @@ export default {
     },
     methods: {
         getCategory() {
-            axios.get('http://127.0.0.1:8000/api/zahid/category')
+            axios.get('http://127.0.0.1:8000/api/part1/category')
                 .then((res) => {
                     this.list = res.data.data
                     console.log(res.data.data)
                 })
         },
         save() {
-            axios.post("http://127.0.0.1:8000/api/zahid/category/", { name: this.name })
+            axios.post("http://127.0.0.1:8000/api/part1/category/", { name: this.name })
                 .then((response) => {
                     this.name
                     this.getCategory()
@@ -96,7 +96,7 @@ export default {
         },
         showCat(id) {
             this.id = id
-            axios.get("http://127.0.0.1:8000/api/zahid/category/" + id + '/edit')
+            axios.get("http://127.0.0.1:8000/api/part1/category/" + id + '/edit')
                 .then((response) => {
                     const d = response.data.data
                     this.name = d.name
@@ -104,7 +104,7 @@ export default {
                 });
         },
         updateCate() {
-            axios.put("http://127.0.0.1:8000/api/zahid/category/" + this.id, { name: this.name })
+            axios.put("http://127.0.0.1:8000/api/part1/category/" + this.id, { name: this.name })
                 .then((response) => {
                     console.log(response.status, response.data);
                     this.id = 0;
@@ -116,7 +116,7 @@ export default {
                 });
         },
         deleteCate(id) {
-            axios.delete("http://127.0.0.1:8000/api/zahid/category/" + id)
+            axios.delete("http://127.0.0.1:8000/api/part1/category/" + id)
             .then(() => {
                 console.log("Category deleted successfully.");
                 this.getCategory()

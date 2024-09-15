@@ -55,7 +55,7 @@ export default {
     },
     methods: {
         getEmployee() {
-            axios.get('http://127.0.0.1:8000/api/zahid/employee')
+            axios.get('http://127.0.0.1:8000/api/part1/employee')
                 .then((res) => {
                     this.employeeList = res.data.data
                     // console.log(res.data.data)
@@ -65,7 +65,7 @@ export default {
             this.$router.push({name:'editemployee',params: { id: id }})
         },
         deleteEmployee(id){
-            axios.delete("http://127.0.0.1:8000/api/zahid/employee/" + id)
+            axios.delete("http://127.0.0.1:8000/api/part1/employee/" + id)
             .then(() => {
                 console.log("Category deleted successfully.");
                 this.getEmployee()
