@@ -3,7 +3,7 @@
         <nav class="navbar bg-light navbar-light">
             <a href="index.html" class="navbar-brand mx-4 mb-3">
                 <h3 class="text-primary">
-                    <marquee><i class="fa fa-hashtag me-2"></i>MRM POS</marquee>
+                    <marquee><i class="fa fa-hashtag me-2"></i>POS</marquee>
                 </h3>
             </a>
             <div class="d-flex align-items-center ms-4 mb-4">
